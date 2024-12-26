@@ -7,6 +7,7 @@ import { NumberPicker } from "./NumberPicker";
 import Avatar from "@mui/material/Avatar";
 import { statuses as allStatuses } from '../data';
 import DeleteIcon from '@mui/icons-material/DeleteOutlineTwoTone';
+import Button from "@mui/material/Button";
 
 export function CharacterDialog() {
     const {
@@ -14,7 +15,9 @@ export function CharacterDialog() {
       focus,
       setFocus,
       exhaustCharacter,
-      setCharacterStatus
+      setCharacterStatus,
+      turn,
+      advanceTurn
     } = useGameStore();
   
     if (focus === undefined) return null;
@@ -57,6 +60,7 @@ export function CharacterDialog() {
               </Stack>
             ))
           }
+          {turn?.key === char.definitionName && <Button variant='contained' onClick={() => advanceTurn()}>Next Turn</Button>}
         </Stack>
       </Card>
     </Dialog>;

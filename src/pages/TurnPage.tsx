@@ -10,9 +10,6 @@ import { CharacterDialog } from '../components/CharacterDialog';
 import { CharacterSummary } from '../components/CharacterSummary';
 import { EnemyListSummary } from '../components/EnemyListSummary';
 
-
-
-
 export function TurnPage() {
   const navigate = useNavigate();
   const {

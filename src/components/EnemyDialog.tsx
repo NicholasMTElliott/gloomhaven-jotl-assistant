@@ -16,12 +16,16 @@ export function EnemyDialog() {
       setFocus,
       setEnemyStatus,
       setEnemyHealth,
-      spawnEnemy
+      spawnEnemy,
+      turn,
+      advanceTurn
     } = useGameStore();
   
     if (focus === undefined || focus.idx === undefined) return null;
     const enemy = enemies[focus.key]?.instances[focus.idx];
     if (enemy === undefined) return null;
+
+    const nextEnemyIdx = enemies[focus.key].instances.findIndex((i, idx) => idx > focus.idx! && i.currentHealth > 0);
   
     if (!enemy.currentHealth) {
       return <Dialog
@@ -88,6 +92,8 @@ export function EnemyDialog() {
             </Stack>
           ))
           }
+          { (turn?.key === enemy.typeName && nextEnemyIdx > focus.idx) && <Button variant='contained' onClick={() => setFocus(focus.key, nextEnemyIdx)}>Next Enemy</Button>}
+          { (turn?.key === enemy.typeName && !(nextEnemyIdx > focus.idx)) && <Button variant='contained' onClick={() => advanceTurn()}>Next Turn</Button>}
         </Stack>
       </Card>
     </Dialog>;

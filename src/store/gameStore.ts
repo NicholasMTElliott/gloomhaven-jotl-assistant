@@ -18,7 +18,7 @@ interface GameStore extends GameState {
     setEnemyHealth: (typeName: string, instanceId: number, value: number) => void;
     setEnemyStatus: (typeName: string, instanceId: number, statusName: string, value: number) => void;
     endGame: () => void;
-    turnOrder: () => { initiative: number, key: string }[];
+    turnOrder: () => { initiative: number, key: string, type: 'character' | 'enemy' }[];
     setFocus: (key: string | undefined, idx?: number) => void;
 }
 
@@ -209,9 +209,11 @@ export const useGameStore = create<GameStore>()(
                 const nextIndex = currentIndex + 1;
                 const nextTurn = nextIndex >= turnOrder.length ? undefined : turnOrder[nextIndex];
 
+                // Is this a character turn?
                 if (state.characters.find((c) => c.definitionName === state.turn?.key)) {
                     console.error('Will remove: ' + statuses.filter(s => s.removalCondition === 'end of turn').map(s => s.name));
                     set({
+                        focus: nextTurn ? {key:nextTurn.key, idx: nextTurn.type === 'enemy' ? 0 : undefined} : undefined,
                         turn: nextTurn,
                         characters: state.characters.map((c) => (c.definitionName === state.turn?.key
                             ? {
@@ -224,9 +226,11 @@ export const useGameStore = create<GameStore>()(
                             } : c)),
                     });
                 }
+                // Otherwise, an enemy turn?
                 else {
                     console.error('Will remove: ' + statuses.filter(s => s.removalCondition === 'end of turn').map(s => s.name));
                     set({
+                        focus: nextTurn ? {key:nextTurn.key, idx: nextTurn.type === 'enemy' ? 0 : undefined} : undefined,
                         turn: nextTurn,
                         enemies: Object.keys(state.enemies).reduce((prev, typeName) => ({
                             ...prev,
@@ -257,11 +261,13 @@ export const useGameStore = create<GameStore>()(
             },
             turnOrder: () => {
                 const state = get();
-                const characters = state.characters.filter((c) => !c.exhausted).map((c) => ({ initiative: c.initiative, key: c.definitionName }));
-                const enemies = Object.keys(state.enemies).filter((typeName) => state.enemies[typeName].instances.some(e => e.currentHealth > 0)).map((typeName) => ({ initiative: state.enemies[typeName].initiative, key: typeName }));
+                const characters = state.characters.filter((c) => !c.exhausted).map((c) => ({ initiative: c.initiative, key: c.definitionName, type: 'character' as const }));
+                const enemies = Object.keys(state.enemies).filter((typeName) => state.enemies[typeName].instances.some(e => e.currentHealth > 0)).map((typeName) => ({ initiative: state.enemies[typeName].initiative, key: typeName, type: 'enemy' as const }));
                 // Return a sorted array of characters and enemy types by initiative and then by name
-                const turns = [...characters, ...enemies].sort((a, b) => a.initiative - b.initiative || a.key.localeCompare(b.key));
-                console.error(turns);
+                const turns = [
+                    ...characters, 
+                    ...enemies]
+                    .sort((a, b) => a.initiative - b.initiative || a.key.localeCompare(b.key));
                 return turns;
             },
         }),
