@@ -27,7 +27,8 @@ export function EnemySummary(props: { idx: number, inst: EnemyInstance }) {
     onClick={() => setFocus(inst.typeName, idx)}
     style={{
       padding: 2,
-      minHeight: 40
+      minHeight: 40,
+      border: inst.variant === 'elite' ? '1px solid yellow' : undefined
     }}>
     <Stack direction={'row'} alignItems={'center'} spacing={1} flexWrap={'wrap'}>
       {inst.variant === 'elite' && <Chip
