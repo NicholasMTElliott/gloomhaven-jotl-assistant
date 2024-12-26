@@ -1,0 +1,219 @@
+[
+  {
+    "name": "Zealot",
+    "image": "enemies/zealot.png",
+    "levels": [
+      {
+        "level": 1,
+        "normal":  { "health": 5,  "movement": 2, "damage": 2 },
+        "elite":   { "health": 7,  "movement": 3, "damage": 2 }
+      },
+      {
+        "level": 2,
+        "normal":  { "health": 6,  "movement": 2, "damage": 2 },
+        "elite":   { "health": 9,  "movement": 3, "damage": 3 }
+      },
+      {
+        "level": 3,
+        "normal":  { "health": 7,  "movement": 2, "damage": 3 },
+        "elite":   { "health": 10, "movement": 3, "damage": 3 }
+      },
+      {
+        "level": 4,
+        "normal":  { "health": 9,  "movement": 2, "damage": 3 },
+        "elite":   { "health": 12, "movement": 3, "damage": 4 }
+      },
+      {
+        "level": 5,
+        "normal":  { "health": 10, "movement": 3, "damage": 4 },
+        "elite":   { "health": 14, "movement": 3, "damage": 4 }
+      }
+    ]
+  },
+  {
+    "name": "Vermling Raider",
+    "image": "enemies/vermling-raider.png",
+    "levels": [
+      {
+        "level": 1,
+        "normal":  { "health": 3,  "movement": 2, "damage": 1 },
+        "elite":   { "health": 5,  "movement": 2, "damage": 1 }
+      },
+      {
+        "level": 2,
+        "normal":  { "health": 4,  "movement": 2, "damage": 2 },
+        "elite":   { "health": 6,  "movement": 3, "damage": 2 }
+      },
+      {
+        "level": 3,
+        "normal":  { "health": 5,  "movement": 3, "damage": 2 },
+        "elite":   { "health": 7,  "movement": 3, "damage": 3 }
+      },
+      {
+        "level": 4,
+        "normal":  { "health": 6,  "movement": 3, "damage": 3 },
+        "elite":   { "health": 9,  "movement": 3, "damage": 3 }
+      },
+      {
+        "level": 5,
+        "normal":  { "health": 7,  "movement": 3, "damage": 3 },
+        "elite":   { "health": 10, "movement": 4, "damage": 4 }
+      }
+    ]
+  },
+  {
+    "name": "Stone Golem",
+    "image": "enemies/stone-golem.png",
+    "levels": [
+      {
+        "level": 1,
+        "normal":  { "health": 8,  "movement": 1, "damage": 3 },
+        "elite":   { "health": 10, "movement": 1, "damage": 4 }
+      },
+      {
+        "level": 2,
+        "normal":  { "health": 9,  "movement": 1, "damage": 3 },
+        "elite":   { "health": 12, "movement": 1, "damage": 4 }
+      },
+      {
+        "level": 3,
+        "normal":  { "health": 11, "movement": 1, "damage": 4 },
+        "elite":   { "health": 14, "movement": 2, "damage": 5 }
+      },
+      {
+        "level": 4,
+        "normal":  { "health": 13, "movement": 2, "damage": 4 },
+        "elite":   { "health": 16, "movement": 2, "damage": 5 }
+      },
+      {
+        "level": 5,
+        "normal":  { "health": 15, "movement": 2, "damage": 5 },
+        "elite":   { "health": 18, "movement": 2, "damage": 6 }
+      }
+    ]
+  },
+  {
+    "name": "Chaos Demon",
+    "image": "enemies/chaos-demon.png",
+    "levels": [
+      {
+        "level": 1,
+        "normal":  { "health": 5,  "movement": 2, "damage": 3 },
+        "elite":   { "health": 7,  "movement": 3, "damage": 4 }
+      },
+      {
+        "level": 2,
+        "normal":  { "health": 6,  "movement": 2, "damage": 3 },
+        "elite":   { "health": 8,  "movement": 3, "damage": 4 }
+      },
+      {
+        "level": 3,
+        "normal":  { "health": 7,  "movement": 3, "damage": 4 },
+        "elite":   { "health": 10, "movement": 3, "damage": 5 }
+      },
+      {
+        "level": 4,
+        "normal":  { "health": 9,  "movement": 3, "damage": 4 },
+        "elite":   { "health": 12, "movement": 4, "damage": 5 }
+      },
+      {
+        "level": 5,
+        "normal":  { "health": 10, "movement": 4, "damage": 5 },
+        "elite":   { "health": 13, "movement": 4, "damage": 6 }
+      }
+    ]
+  },
+  {
+    "name": "Rending Drake",
+    "image": "enemies/rending-drake.png",
+    "levels": [
+      {
+        "level": 1,
+        "normal":  { "health": 5,  "movement": 2, "damage": 3 },
+        "elite":   { "health": 7,  "movement": 2, "damage": 4 }
+      },
+      {
+        "level": 2,
+        "normal":  { "health": 6,  "movement": 2, "damage": 3 },
+        "elite":   { "health": 9,  "movement": 3, "damage": 4 }
+      },
+      {
+        "level": 3,
+        "normal":  { "health": 7,  "movement": 3, "damage": 4 },
+        "elite":   { "health": 10, "movement": 3, "damage": 5 }
+      },
+      {
+        "level": 4,
+        "normal":  { "health": 8,  "movement": 3, "damage": 4 },
+        "elite":   { "health": 11, "movement": 4, "damage": 5 }
+      },
+      {
+        "level": 5,
+        "normal":  { "health": 10, "movement": 4, "damage": 5 },
+        "elite":   { "health": 13, "movement": 4, "damage": 6 }
+      }
+    ]
+  },
+  {
+    "name": "Black Sludge",
+    "image": "enemies/black-sludge.png",
+    "levels": [
+      {
+        "level": 1,
+        "normal":  { "health": 5,  "movement": 1, "damage": 2 },
+        "elite":   { "health": 7,  "movement": 1, "damage": 3 }
+      },
+      {
+        "level": 2,
+        "normal":  { "health": 6,  "movement": 1, "damage": 2 },
+        "elite":   { "health": 8,  "movement": 1, "damage": 3 }
+      },
+      {
+        "level": 3,
+        "normal":  { "health": 7,  "movement": 2, "damage": 3 },
+        "elite":   { "health": 10, "movement": 2, "damage": 4 }
+      },
+      {
+        "level": 4,
+        "normal":  { "health": 9,  "movement": 2, "damage": 3 },
+        "elite":   { "health": 12, "movement": 2, "damage": 4 }
+      },
+      {
+        "level": 5,
+        "normal":  { "health": 10, "movement": 2, "damage": 4 },
+        "elite":   { "health": 13, "movement": 2, "damage": 5 }
+      }
+    ]
+  },
+  {
+    "name": "Giant Viper",
+    "image": "enemies/giant-viper.png",
+    "levels": [
+      {
+        "level": 1,
+        "normal":  { "health": 3,  "movement": 3, "damage": 1 },
+        "elite":   { "health": 5,  "movement": 3, "damage": 2 }
+      },
+      {
+        "level": 2,
+        "normal":  { "health": 4,  "movement": 3, "damage": 2 },
+        "elite":   { "health": 6,  "movement": 3, "damage": 2 }
+      },
+      {
+        "level": 3,
+        "normal":  { "health": 5,  "movement": 4, "damage": 2 },
+        "elite":   { "health": 7,  "movement": 4, "damage": 3 }
+      },
+      {
+        "level": 4,
+        "normal":  { "health": 7,  "movement": 4, "damage": 3 },
+        "elite":   { "health": 9,  "movement": 4, "damage": 3 }
+      },
+      {
+        "level": 5,
+        "normal":  { "health": 8,  "movement": 4, "damage": 3 },
+        "elite":   { "health": 11, "movement": 5, "damage": 4 }
+      }
+    ]
+  }
+]

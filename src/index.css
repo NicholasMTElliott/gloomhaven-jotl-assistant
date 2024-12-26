@@ -1,0 +1,306 @@
+
+
+/* ==============================
+   Gothic Dark Theme Variables
+   ============================== */
+/* 
+  You can override these variables in your own :root or .dark-theme selector
+  if you want to switch themes dynamically.
+*/
+@font-face {
+  font-family: 'Pirata One';
+  src: url('/fonts/pirataone-regular-webfont.woff2') format('woff2'),
+       url('/fonts/pirataone-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Nyala';
+  src: url('/fonts/nyala-webfont.woff2') format('woff2'),
+       url('/fonts/nyala-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+@font-face {
+  font-family: 'High Tower';
+  src: url('/fonts/htowert-webfont.woff2') format('woff2'),
+       url('/fonts/htowert-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+@font-face {
+  font-family: 'Sakkal Majalla';
+  src: url('/fonts/majalla-webfont.woff2') format('woff2'),
+       url('/fonts/majalla-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+:root {
+  color-scheme: dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+
+  /* Colors */
+  --color-bg: #1b1b1d;         /* Very dark background */
+  --color-bg-secondary: #2c2c2f; 
+  --color-text: #f5f5f5;       /* Light text for contrast */
+  --color-accent: #8b0000;     /* Dark red accent (crimson/gothic) */
+  --color-accent-light: #c81f1f; 
+  --color-border: #444;        
+
+  /* Typography / Font Families */
+  --font-body: 'Sakkal Majalla', serif;      /* or a dark, gothic-styled font */
+  --font-heading: 'Pirata One', serif; 
+  /* 
+    "Cinzel Decorative" is just an example of a gothic-like font. 
+    Feel free to choose or import your own. 
+  */
+
+  /* Font Sizes (typical scale) */
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.75rem;
+  --font-size-h3: 1.5rem;
+  --font-size-h4: 1.25rem;
+  --font-size-h5: 1.1rem;
+  --font-size-body: 1rem;
+  --font-size-small: 0.875rem;
+
+  /* Spacing */
+  --spacing-xxs: 0.25rem;
+  --spacing-xs:  0.5rem;
+  --spacing-sm:  0.75rem;
+  --spacing-md:  1rem;
+  --spacing-lg:  1.5rem;
+  --spacing-xl:  2rem;
+
+  /* Rounding Corners */
+  --border-radius: 4px;
+}
+
+/* ==============================
+   Global Resets
+   ============================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==============================
+   Base Body Styles
+   ============================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  margin: 0;
+  padding: var(--spacing-sm);
+}
+
+/* Scrollbar styling (optional) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+}
+
+/* ==============================
+   Headings
+   ============================== */
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+h2 {
+  font-size: var(--font-size-h2);
+}
+h3 {
+  font-size: var(--font-size-h3);
+}
+h4 {
+  font-size: var(--font-size-h4);
+}
+h5 {
+  font-size: var(--font-size-h5);
+}
+
+/* ==============================
+   Paragraphs & Body text
+   ============================== */
+
+p,
+span,
+li,
+label {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+}
+
+small {
+  font-size: var(--font-size-small);
+}
+
+/* ==============================
+   Links
+   ============================== */
+
+a {
+  color: var(--color-accent-light);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ==============================
+   Buttons
+   ============================== */
+
+button {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--color-accent-light);
+}
+
+/* ==============================
+   Inputs
+   ============================== */
+
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius);
+  outline: none;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--color-accent);
+}
+
+/* ==============================
+   Basic Containers / Sections
+   ============================== */
+
+.container {
+  padding: var(--spacing-md);
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* 
+  Utility classes for spacing 
+  (margin & padding).
+  These can be used within your app 
+  for quick layout adjustments.
+*/
+
+.mt-sm {
+  margin-top: var(--spacing-sm) !important;
+}
+.mt-md {
+  margin-top: var(--spacing-md) !important;
+}
+.mt-lg {
+  margin-top: var(--spacing-lg) !important;
+}
+.mb-sm {
+  margin-bottom: var(--spacing-sm) !important;
+}
+.mb-md {
+  margin-bottom: var(--spacing-md) !important;
+}
+.mb-lg {
+  margin-bottom: var(--spacing-lg) !important;
+}
+.pt-sm {
+  padding-top: var(--spacing-sm) !important;
+}
+.pt-md {
+  padding-top: var(--spacing-md) !important;
+}
+.pt-lg {
+  padding-top: var(--spacing-lg) !important;
+}
+.pb-sm {
+  padding-bottom: var(--spacing-sm) !important;
+}
+.pb-md {
+  padding-bottom: var(--spacing-md) !important;
+}
+.pb-lg {
+  padding-bottom: var(--spacing-lg) !important;
+}
+
+
+.MuiFormControlLabel-root:hover {
+  box-sizing: border-box;
+  border: 2px solid var(--color-accent);
+  border-radius: 2px;
+}
+
+.MuiFormControlLabel-root.MuiFormControlLabel-labelPlacementEnd {
+  margin-left: 0;
+}

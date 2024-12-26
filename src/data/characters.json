@@ -1,0 +1,19 @@
+[
+    {
+      "name": "Redguard",
+      "image": "characters/redguard.png"
+    },
+    {
+      "name": "Voidwarden",
+      "image": "characters/voidwarden.png"
+    },
+    {
+      "name": "Hatchet",
+      "image": "characters/hatchet.png"
+    },
+    {
+      "name": "Demolitionist",
+      "image": "characters/demolitionist.png"
+    }
+  ]
+  
