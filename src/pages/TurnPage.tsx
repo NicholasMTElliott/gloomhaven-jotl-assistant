@@ -1,5 +1,4 @@
 // src/pages/TurnPage.tsx
-import React from 'react';
 import { useGameStore } from '../store/gameStore';
 import { useNavigate } from 'react-router-dom';
 
