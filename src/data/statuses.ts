@@ -1,4 +1,6 @@
-[
+import { StatusDefinition } from "../types"
+
+export const statuses: StatusDefinition[] = [
     {
       "name": "Poison",
       "image": "icons/poison.png",
@@ -55,5 +57,5 @@
         "removalCondition": "end of round",
         "max": 10
     }
-  ]
+  ];
   

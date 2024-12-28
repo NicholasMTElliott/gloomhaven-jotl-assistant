@@ -2,8 +2,10 @@
 
 export type RemovalCondition = 'end of turn' | 'end of round' | 'on heal' | 'other';
 
+export type StatusNames = 'Poison' | 'Wound' | 'Stun' | 'Disarm' | 'Immobilize' | 'Strengthen' | 'Muddle' | 'Shield';
+
 export interface StatusDefinition {
-  name: string;
+  name: StatusNames;
   image: string;
   description: string;
   removalCondition: RemovalCondition;
@@ -21,12 +23,14 @@ export interface EnemyLevelStats {
   damage: number;
   
   // Optionals
+  extra?: string;
   ability1?: string;
   ability2?: string;
-  statuses?: Record<string, number>; // status name -> count
+  statuses?: Partial<Record<StatusNames, number>>; // status name -> count
 }
 
 export interface EnemyLevel {
+  level: number;
   normal: EnemyLevelStats;
   elite: EnemyLevelStats;
 }
@@ -47,12 +51,12 @@ export interface EnemyInstance {
   typeName: string;   // reference to the EnemyTypeDefinition name
   variant: EnemyInstanceType;
   currentHealth: number;
-  statuses: Record<string, number>; // status name -> count
+  statuses: Record<StatusNames, number>; // status name -> count
 }
 
 export interface CharacterInstance {
   definitionName: string;
-  statuses: Record<string, number>; // status name -> count
+  statuses: Record<StatusNames, number>; // status name -> count
   exhausted: boolean;
   initiative: number;
 }
