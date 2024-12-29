@@ -1,6 +1,6 @@
 import Card from "@mui/material/Card";
 import { useGameStore } from "../store/gameStore";
-import { CharacterInstance } from "../types";
+import { CharacterInstance, StatusNames } from "../types";
 import Stack from "@mui/material/Stack";
 import Avatar from "@mui/material/Avatar";
 import { statuses as allStatuses } from '../data';
@@ -27,6 +27,7 @@ export function CharacterSummary(props: { char: CharacterInstance }) {
             <Stack direction={'row'} spacing={1} flexWrap={'wrap'}>
               {
                 Object.keys(char.statuses)
+                  .map(s => s as StatusNames)
                   .filter(status => char.statuses[status])
                   .map((status) => (
                     <Avatar

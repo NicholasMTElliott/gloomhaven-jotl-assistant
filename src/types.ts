@@ -51,12 +51,12 @@ export interface EnemyInstance {
   typeName: string;   // reference to the EnemyTypeDefinition name
   variant: EnemyInstanceType;
   currentHealth: number;
-  statuses: Record<StatusNames, number>; // status name -> count
+  statuses: Partial<Record<StatusNames, number>>; // status name -> count
 }
 
 export interface CharacterInstance {
   definitionName: string;
-  statuses: Record<StatusNames, number>; // status name -> count
+  statuses: Partial<Record<StatusNames, number>>; // status name -> count
   exhausted: boolean;
   initiative: number;
 }
