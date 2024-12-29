@@ -43,9 +43,8 @@ export function CharacterDialog() {
           </Stack>
           {
             allStatuses.map((status) => (
-              <Stack direction={'row'} spacing={1} alignItems={'center'}>
+              <Stack key={status.name} direction={'row'} spacing={1} alignItems={'center'}>
                 <Avatar
-                  key={status.name}
                   src={status.image}
                   sx={{ width: 48, height: 48 }}
                 />

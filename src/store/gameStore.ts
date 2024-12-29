@@ -171,7 +171,7 @@ export const useGameStore = create<GameStore>()(
                 // End the previous round by clearing statuses with 'end of round' from all entities
                 set({
                     round: state.round + 1,
-                    turn: state.turnOrder()[0],
+                    turn: { key: '', initiative: 0 },
                     characters: state.characters.map((c) => ({
                         ...c,
                         statuses: {

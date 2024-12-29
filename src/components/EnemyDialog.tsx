@@ -123,9 +123,8 @@ export function EnemyDialog() {
                 <hr style={{ marginBottom: 8, width: '100%' }} />
                 {
                   Object.entries(enemyType.levels[level][enemy.variant].statuses!).map(([status, value]) => (
-                    <Stack direction={'row'} alignItems={'center'} spacing={1}>
+                    <Stack key={status} direction={'row'} alignItems={'center'} spacing={1}>
                       <Avatar
-                        key={status}
                         src={statuses.find(s => s.name === status)?.image}
                         sx={{ width: 32, height: 32 }}
                       /><label style={{ fontSize: 22 }}>{value}</label></Stack>))
@@ -136,9 +135,8 @@ export function EnemyDialog() {
           {/* Statuses */}
           <Stack spacing={1}>
             {allStatuses.map((status) => (
-              <Stack direction={'row'} spacing={1} alignItems={'center'}>
+              <Stack key={status.name} direction={'row'} spacing={1} alignItems={'center'}>
                 <Avatar
-                  key={status.name}
                   src={status.image}
                   sx={{ width: 48, height: 48 }}
                 />
