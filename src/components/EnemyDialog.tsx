@@ -19,6 +19,7 @@ export function EnemyDialog() {
     setEnemyStatus,
     setEnemyHealth,
     spawnEnemy,
+    killEnemy,
     turn,
     advanceTurn,
     level
@@ -30,9 +31,9 @@ export function EnemyDialog() {
   const enemyType = enemyTypes.find(t => t.name === enemy.typeName);
   if (enemyType === undefined) return null;
 
-  const nextEnemyIdx = enemies[focus.key].instances.findIndex((i, idx) => idx > focus.idx! && i.currentHealth > 0);
+  const nextEnemyIdx = enemies[focus.key].instances.findIndex((i, idx) => idx > focus.idx! && !i.exhausted);
 
-  if (!enemy.currentHealth) {
+  if (enemy.exhausted) {
     return <Dialog
       open={focus !== undefined}
       onClose={() => setFocus(undefined)}
@@ -85,7 +86,7 @@ export function EnemyDialog() {
                 sx={{ backgroundColor: 'yellow', '--color-text': 'black' }}
               />}
               <IconButton onClick={() => {
-                setEnemyHealth(focus.key, focus.idx!, 0);
+                killEnemy(focus.key, focus.idx!);
                 setFocus(undefined)
               }}>
                 <DeleteIcon sx={{ width: 32, height: 32 }} />

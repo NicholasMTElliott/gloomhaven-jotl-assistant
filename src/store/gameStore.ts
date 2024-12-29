@@ -41,6 +41,7 @@ export const useGameStore = create<GameStore>()(
                     typeName,
                     variant,
                     currentHealth: health,
+                    exhausted: false,
                     statuses: {},
                 };
                 set({
@@ -61,6 +62,7 @@ export const useGameStore = create<GameStore>()(
                     typeName,
                     variant: 'normal',
                     currentHealth: 0,
+                    exhausted: true,
                     statuses: {},
                 };
                 set({
@@ -145,6 +147,7 @@ export const useGameStore = create<GameStore>()(
                             typeName: curr,
                             variant: 'normal',
                             currentHealth: 0,
+                            exhausted: true,
                             statuses: {}
                         } satisfies EnemyInstance))
                     }

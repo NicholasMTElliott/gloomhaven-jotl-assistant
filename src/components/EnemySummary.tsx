@@ -9,7 +9,7 @@ import Chip from "@mui/material/Chip";
 export function EnemySummary(props: { idx: number, inst: EnemyInstance }) {
   const { setFocus } = useGameStore();
   const { idx, inst } = props;
-  if (inst.currentHealth == 0) {
+  if (inst.exhausted) {
     return <Card
       onClick={() => setFocus(inst.typeName, idx)}
       variant='outlined' style={{

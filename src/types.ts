@@ -51,6 +51,7 @@ export interface EnemyInstance {
   typeName: string;   // reference to the EnemyTypeDefinition name
   variant: EnemyInstanceType;
   currentHealth: number;
+  exhausted: boolean;
   statuses: Partial<Record<StatusNames, number>>; // status name -> count
 }
 
