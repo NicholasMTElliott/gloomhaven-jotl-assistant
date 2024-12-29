@@ -53,7 +53,7 @@ export const statuses: StatusDefinition[] = [
     {
         "name":"Shield",
         "image": "icons/shield.png",
-        "description": "Cannot perform actions or move.",
+        "description": "Reduce damage from attacks.",
         "removalCondition": "end of round",
         "max": 10
     }

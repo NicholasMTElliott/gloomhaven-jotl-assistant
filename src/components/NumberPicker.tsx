@@ -11,7 +11,7 @@ export function NumberPicker(props: { value: number, onChange: (value: number) =
   const min = props.min ?? 0;
   const max = props.max ?? 100;
 
-  return <Stack direction="row" spacing={2}>
+  return <Stack direction="row" spacing={0}>
       <IconButton disabled={value <= min} size='large' onClick={() => onChange(Math.max(min, value - 1))} >
         <RemoveIcon/>
       </IconButton>
@@ -19,6 +19,7 @@ export function NumberPicker(props: { value: number, onChange: (value: number) =
         value={value}
         label="Age"
         fullWidth
+        sx={{minWidth: 72}}
         onChange={(e) => onChange(Number(e.target.value))}
       >
         {

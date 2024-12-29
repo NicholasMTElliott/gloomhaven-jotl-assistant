@@ -3,7 +3,7 @@ import { useGameStore } from "../store/gameStore";
 import Stack from "@mui/material/Stack";
 import Avatar from "@mui/material/Avatar";
 import { statuses as allStatuses } from '../data';
-import { EnemyInstance } from "../types";
+import { EnemyInstance, StatusNames } from "../types";
 import Chip from "@mui/material/Chip";
 
 export function EnemySummary(props: { idx: number, inst: EnemyInstance }) {
@@ -31,12 +31,6 @@ export function EnemySummary(props: { idx: number, inst: EnemyInstance }) {
       border: inst.variant === 'elite' ? '1px solid yellow' : undefined
     }}>
     <Stack direction={'row'} alignItems={'center'} spacing={1} flexWrap={'wrap'}>
-      {inst.variant === 'elite' && <Chip
-        label="Elite"
-        variant="filled"
-        size="small"
-        sx={{ backgroundColor: 'yellow', '--color-text': 'black' }}
-      />}
       <h5>{idx}: </h5>
       <Avatar
         sx={{ width: 24, height: 24 }}
@@ -44,6 +38,7 @@ export function EnemySummary(props: { idx: number, inst: EnemyInstance }) {
       {inst.currentHealth}
       {
         Object.keys(inst.statuses)
+          .map(s => s as StatusNames)
           .filter(status => inst.statuses[status])
           .map((status) => (
             <Avatar
@@ -53,6 +48,12 @@ export function EnemySummary(props: { idx: number, inst: EnemyInstance }) {
             >{inst.statuses[status]}</Avatar>
           ))
       }
+      {inst.variant === 'elite' && <Chip
+        label="Elite"
+        variant="filled"
+        size="small"
+        sx={{ backgroundColor: 'yellow', '--color-text': 'black' }}
+      />}
     </Stack>
   </Card>;
 }
