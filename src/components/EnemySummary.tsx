@@ -31,7 +31,7 @@ export function EnemySummary(props: { idx: number, inst: EnemyInstance }) {
       border: inst.variant === 'elite' ? '1px solid yellow' : undefined
     }}>
     <Stack direction={'row'} alignItems={'center'} spacing={1} flexWrap={'wrap'}>
-      <h5>{idx}: </h5>
+      <h5>{idx+1}: </h5>
       <Avatar
         sx={{ width: 24, height: 24 }}
         src='/icons/health.png' />

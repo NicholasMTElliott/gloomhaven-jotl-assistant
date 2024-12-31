@@ -9,7 +9,7 @@ import Avatar from "@mui/material/Avatar";
 import { statuses as allStatuses, statuses } from '../data';
 import DeleteIcon from '@mui/icons-material/DeleteOutlineTwoTone';
 import { enemyTypes } from "../data";
-import React from "react";
+import React, { useMemo } from "react";
 import Chip from "@mui/material/Chip";
 export function EnemyDialog() {
   const {
@@ -25,6 +25,9 @@ export function EnemyDialog() {
     level
   } = useGameStore();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const initialHealth = useMemo(() => enemies[focus?.key ?? '']?.instances[focus?.idx ?? 0]?.currentHealth, [focus?.key, focus?.idx]);
+
   if (focus === undefined || focus.idx === undefined) return null;
   const enemy = enemies[focus.key]?.instances[focus.idx];
   if (enemy === undefined) return null;
@@ -32,6 +35,7 @@ export function EnemyDialog() {
   if (enemyType === undefined) return null;
 
   const nextEnemyIdx = enemies[focus.key].instances.findIndex((i, idx) => idx > focus.idx! && !i.exhausted);
+
 
   if (enemy.exhausted) {
     return <Dialog
@@ -93,7 +97,7 @@ export function EnemyDialog() {
               </IconButton>
             </Stack>
             <Avatar src={enemyType.image} sx={{ width: 128, height: 128 }} />
-            <h4 style={{ marginTop: 16 }}>Current Health</h4>
+            <h4 style={{ marginTop: 16 }}>Current Health ({initialHealth})</h4>
             <NumberPicker value={enemy.currentHealth} min={0}
               max={20}
               onChange={(value) => setEnemyHealth(focus.key, focus.idx!, value)} />
